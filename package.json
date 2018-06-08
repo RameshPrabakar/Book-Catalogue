@@ -8,6 +8,17 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.10.2"
-  }
+    "express": "^4.10.2",
+	"pg": "^7.4.3",
+	"moment": "^2.22.1",
+	"express-session": "^1.15.6",
+	"sql-template-strings": "^2.2.2"
+  },
+  "keywords": [
+        "BOOK CATALOGUE"
+    ],
+  "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RameshPrabakar/Book-Catalogue.git"
+  },
 }
