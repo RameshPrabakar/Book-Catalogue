@@ -1,0 +1,61 @@
+-- Table: books
+
+-- DROP TABLE books;
+
+CREATE TABLE books
+(
+  id serial NOT NULL,
+  title character varying(1024),
+  isbn character varying(1024),
+  publisher character varying(64),
+  date_published date,
+  author_name character varying(64),
+  file_path character varying(64),
+  file_type character varying(64),
+  CONSTRAINT pk_books PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE books
+  OWNER TO postgres;
+  
+  ============================================================================================
+-- Table: collection
+
+-- DROP TABLE collection;
+
+CREATE TABLE collection
+(
+  id serial NOT NULL,
+  user_id integer,
+  book_id integer,
+  type character varying(64),
+  CONSTRAINT pk_collection PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE collection
+  OWNER TO postgres;
+ 
+ ============================================================================================
+  
+ -- Table: users
+
+-- DROP TABLE users;
+
+CREATE TABLE users
+(
+  id serial NOT NULL,
+  username character varying(64),
+  salt character varying(32),
+  password character varying(1024),
+  email character varying(64),
+  CONSTRAINT pk_users PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE users
+  OWNER TO postgres;
